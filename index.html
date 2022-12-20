@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online-Ticket-Booking-Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="main-page">
+    <div class="container">
+    <form name="myform"  onsubmit="return formValidation();"> 
+        <div class="box">
+         
+        <h2>Booking_Portal</h2>
+        <p>User Name :</p>
+        <input type="text" name="User" id="Uname" >
+        <p>Password :</p>
+        <input type="text" name="pwd"  id="">
+    
+        <p>E-mail :</p>
+        <input type="email" name="email" id="" ><br><br>
+        <input type="submit" value="Sign In" formaction="Booking.html" style="width:fit-content;color:white;" >
+        <!-- <a href="#" class="pass">Forgot Password?</a> -->
+
+        <script>
+            function formValidation(){
+                const u_name = document.myform.User.value;
+                        if( u_name == null || u_name == ""){
+                            alert("enter your first name")
+                            return false;
+                        }
+
+                const pwd = document.myform.pwd.value;  
+                        if(pwd.length<6){  
+                            alert("Enter your Password and must be at least 6 characters long.");  
+                            return false;  
+                        }
+                        
+                const mail = document.myform.email.value;  
+                const atposition = mail.indexOf("@");  
+                const dotposition = mail.lastIndexOf(".");  
+                        if (atposition<1 || dotposition<atposition+2 || dotposition+2>=mail.length){  
+                            alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+                            return false;  
+                        }          
+            }
+        </script>
+        </form>
+    </div>
+</body>
+</html>
+
